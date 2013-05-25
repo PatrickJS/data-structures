@@ -1,5 +1,5 @@
 class Queue
-  initialize: ->
+  constructor: ->
     @storage = {}
     @size = 0
     @front = 0
