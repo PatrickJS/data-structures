@@ -17,7 +17,38 @@ var MakeNode = function(value) {
   this.next = null;
 };
 
+LinkedList.prototype.addToHead = function(value) {
+  var node = new MakeNode(value);
+  if (!this.head) {
+    this.head = node;
+    this.tail = node;
+  } else {
+    this.head.next = this.head;
+    this.head = node;
+  }
+};
+LinkedList.prototype.removeHead = function() {
+  this.head.next = this.head;
+};
 LinkedList.prototype.addToTail = function(value) {
-  // body...
+  var node = new MakeNode(value);
+  if (!this.tail) {
+    this.head = node;
+    this.tail = node;
+  } else {
+    this.tail.next = node;
+    this.tail = node;
+  }
+};
+LinkedList.prototype.removeTail = function() {
+
 };
 
+LinkedList.prototype.contains = function(value) {
+  if (this.value === value) {
+    return true;
+  } else if (this.next) {
+    this.next.contains(value);
+  }
+  return false;
+};
