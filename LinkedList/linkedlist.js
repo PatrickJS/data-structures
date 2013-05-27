@@ -13,12 +13,12 @@ LinkedList.prototype.addToHead = function(value) {
     this.head = node;
     this.tail = node;
   } else {
-    this.head.next = this.head;
+    node.next = this.head;
     this.head = node;
   }
 };
 LinkedList.prototype.removeHead = function() {
-  this.head.next = this.head;
+  this.head = this.head.next;
 };
 LinkedList.prototype.addToTail = function(value) {
   var node = new MakeNode(value);
@@ -34,7 +34,8 @@ LinkedList.prototype.removeTail = function(node) {
   node = node || this.head;
   if (node.next === this.tail) {
     this.tail = node;
-  } else {
+    this.tail.next = null;
+  } else if (node.next) {
     return this.removeTail(node.next);
   }
   return;
