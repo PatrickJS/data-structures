@@ -1,13 +1,3 @@
-/*
-A linkedList class, in functional style, with the following properties:
-
-.head property, a linkedListNode instance
-.tail property, a linkedListNode instance
-.addToTail() method, takes a value and adds it to the end of the list
-.removeHead() method, removes the first node from the list and returns its value
-.contains() method, returns boolean reflecting whether or not the passed-in value is in the linked list
-*/
-
 var LinkedList = function() {
   this.head = null;
   this.tail = null;
@@ -40,15 +30,22 @@ LinkedList.prototype.addToTail = function(value) {
     this.tail = node;
   }
 };
-LinkedList.prototype.removeTail = function() {
-
+LinkedList.prototype.removeTail = function(node) {
+  node = node || this.head;
+  if (node.next === this.tail) {
+    this.tail = node;
+  } else {
+    return this.removeTail(node.next);
+  }
+  return;
 };
 
-LinkedList.prototype.contains = function(value) {
-  if (this.value === value) {
+LinkedList.prototype.contains = function(value, node) {
+  node = node || this.head;
+  if (node.value === value) {
     return true;
-  } else if (this.next) {
-    this.next.contains(value);
+  } else if (node.next) {
+    return node.contains(value, node.next);
   }
   return false;
 };
