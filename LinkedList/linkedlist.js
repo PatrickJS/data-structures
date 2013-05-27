@@ -46,7 +46,7 @@ LinkedList.prototype.contains = function(value, node) {
   if (node.value === value) {
     return true;
   } else if (node.next) {
-    return node.contains(value, node.next);
+    return this.contains(value, node.next);
   }
   return false;
 };
