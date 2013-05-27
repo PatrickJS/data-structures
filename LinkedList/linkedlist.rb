@@ -7,7 +7,7 @@ class Node
 end
 
 class LinkedList
-  attr_accessor :head, :tail
+  attr_writer :head, :tail
   def initialize
     @head = nil
     @tail = nil
