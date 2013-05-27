@@ -1,37 +1,41 @@
 class LinkedList
-  attr_writer :head, :tail
+  attr_accessor :head, :tail
   def initialize
-    @head, @tail = nil
+    @head = nil
+    @tail = nil
   end
 
   def add_to_head(value)
     node = Node.new(value)
-    if !@head
-      @head, @tail = node
+    unless @head
+      @head = node
+      @tail = node
     else
-      @head.next = @head
+      node.next = @head
       @head = node
     end
   end
 
   def add_to_tail(value)
     node = Node.new(value)
-    if !@tail
-      @head, @tail = node
+    unless @tail
+      @head = node
+      @tail = node
     else
-      @head.next = @head
+      @tail.next = node
       @head = node
     end
   end
 
   def remove_head
-    @head.next = @head
+    @head = @head.next
   end
 
   def remove_tail(node=@head)
     if node.next == @tail
       @tail = node
-    else
+      @tail.next = nil
+    else node.next
       self.remove_head(node.next)
     end
   end
