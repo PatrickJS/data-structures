@@ -8,9 +8,18 @@ end
 
 class LinkedList
   attr_writer :head, :tail
+
   def initialize
     @head = nil
     @tail = nil
+  end
+
+  def yolo
+    return @yolo
+  end
+
+  def yolo=(val)
+    @yolo = val
   end
 
   def add_to_head(value)
@@ -30,7 +39,7 @@ class LinkedList
       @tail = node
     else
       @tail.next = node
-      @head = node
+      @tail = node
     end
   end
 
