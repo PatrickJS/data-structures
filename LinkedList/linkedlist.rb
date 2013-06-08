@@ -1,32 +1,14 @@
-class Node
-  attr_accessor :value, :next
-  def initialize(value)
-    @value = value
-    @next = nil
-  end
-end
-
 class LinkedList
   attr_writer :head, :tail
 
   def initialize
-    @head = nil
-    @tail = nil
-  end
-
-  def yolo
-    return @yolo
-  end
-
-  def yolo=(val)
-    @yolo = val
+    @head, @tail = nil, nil
   end
 
   def add_to_head(value)
     node = Node.new(value)
     unless @head
-      @tail = node
-      @head = node
+      @tail, @head = node, node
     else
       node.next = @head
       @head = node
@@ -44,7 +26,9 @@ class LinkedList
   end
 
   def remove_head
+    temp = @head
     @head = @head.next
+    return temp
   end
   def remove_tail(node=@head)
     if node.next == @tail
@@ -63,4 +47,14 @@ class LinkedList
     end
     return false
   end
+
+  private
+  class Node
+    attr_accessor :value, :next
+    def initialize(value)
+      @value = value
+      @next = nil
+    end
+  end
+
 end
