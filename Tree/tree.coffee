@@ -3,7 +3,7 @@ class Tree
     @value = value
     @children = []
   addChild: (value)->
-    @children.push(new Tree(value))
+    @children.push new Tree(value)
   contains: (value)->
     if @value == value
       return true
