@@ -5,4 +5,5 @@ Recreating Data Structures in Javascript, Ruby, and Coffeescript
 * Sets
 * Hash-Tables
 * Trees
+* Binary Search Tree
 * Red-Black Tree
