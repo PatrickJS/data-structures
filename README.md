@@ -1,1 +1,8 @@
-Recreating Stacks, Queues, Linked-Lists, Hash-Tables, Trees, BST's, Red-Black in JavaScript in Ruby
+Recreating Data Structures in Javascript, Ruby, and Coffeescript
+* Stacks
+* Queues
+* Linked-Lists
+* Sets
+* Hash-Tables
+* Trees
+* Red-Black Tree
