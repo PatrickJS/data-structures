@@ -14,6 +14,10 @@ queueMethods.enqueue = function(value){
 };
 
 queueMethods.dequeue = function(){
+  if (this.queueSize - this.front) {
+    var temp = this.storage[this.front];
+    return (delete this.storage[this.front++]) && temp;
+  }
 };
 
 queueMethods.size = function(){
