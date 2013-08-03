@@ -1,16 +1,20 @@
+// Pseudo-Classical pattern
+
 var Queue = function() {
   this.storage = {};
-  this.size = 0;
   this.front = 0;
+  this.queueSize = 0;
 };
 
-Queue.prototype.add = function(value) {
-  this.storage[this.size++] = value;
+Queue.prototype.enqueue = function(value) {
+  this.storage[this.queueSize++] = value;
 };
-Queue.prototype.remove = function() {
-  var temp = this.storage[this.front];
-  return (delete this.storage[this.front++]) && temp;
+Queue.prototype.dequeue = function() {
+  if (this.queueSize - this.front) {
+    var temp = this.storage[this.front];
+    return (delete this.storage[this.front++]) && temp;
+  }
 };
-Queue.prototype.length = function(value) {
-  return this.size - this.front;
+Queue.prototype.size = function(value) {
+  return this.queueSize - this.front;
 };
