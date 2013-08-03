@@ -11,6 +11,7 @@ var makeQueue = function(){
 var queueMethods = {};
 
 queueMethods.enqueue = function(value){
+  this.storage[this.queueSize++] = value;
 };
 
 queueMethods.dequeue = function(){
