@@ -8,6 +8,10 @@ var makeStack = function(){
   };
 
   stack.pop = function(){
+    if (size) {
+      var temp = storage[size - 1];
+      return (delete storage[size--]) && temp;
+    }
   };
 
   stack.size = function(){
