@@ -16,6 +16,7 @@ var makeQueue = function(){
   };
 
   queue.size = function(){
+    return size - front;
   };
 
   return queue;
