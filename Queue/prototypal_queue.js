@@ -6,3 +6,14 @@ var Queue = function(){
 
   return methods;
 };
+
+var queueMethods = Queue.prototype;
+
+queueMethods.enqueue = function(value){
+};
+
+queueMethods.dequeue = function(){
+};
+
+queueMethods.size = function(){
+};
