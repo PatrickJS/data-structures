@@ -5,6 +5,8 @@ class Stack
   end
 
   def push(value)
+    @storage[@stackSize] = value
+    @stackSize += 1
   end
 
   def pop
