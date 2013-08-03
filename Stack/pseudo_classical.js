@@ -5,6 +5,7 @@ var Stack = function(){
 
 
 Stack.prototype.push = function(value){
+  this.storage[this.stackSize++] = value;
 };
 
 Stack.prototype.pop = function(){
