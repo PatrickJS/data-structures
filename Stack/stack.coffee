@@ -1,5 +1,7 @@
 class Stack
   constructor: ->
+    @storage = {}
+    @stackSize = 0
   push: (value)->
     @storage[@stackSize++] = value
   pop: ->
