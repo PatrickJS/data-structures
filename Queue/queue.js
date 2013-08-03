@@ -5,13 +5,11 @@ var Queue = function() {
 };
 
 Queue.prototype.add = function(value) {
-  this.storage[this.size] = value;
-  ++this.size;
+  this.storage[this.size++] = value;
 };
 Queue.prototype.remove = function() {
   var temp = this.storage[this.front];
-  delete this.storage[this.front];
-  ++this.front;
+  delete this.storage[this.front++];
   return temp;
 };
 Queue.prototype.length = function(value) {
