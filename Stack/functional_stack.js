@@ -4,6 +4,7 @@ var makeStack = function(){
       stack = {};
 
   stack.push = function(value){
+    storage[size++] = value;
   };
 
   stack.pop = function(){
