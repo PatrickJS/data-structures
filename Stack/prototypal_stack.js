@@ -8,6 +8,7 @@ var Stack = function(){
 stackMethods = Stack.prototype;
 
 stackMethods.push = function(value){
+  this.storage[this.stackSize++] = value;
 };
 
 stackMethods.pop = function(){
