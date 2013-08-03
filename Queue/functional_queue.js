@@ -5,6 +5,7 @@ var makeQueue = function(){
       queue = {};
 
   queue.enqueue = function(value){
+    storage[size++] = value;
   };
 
   queue.dequeue = function(){
