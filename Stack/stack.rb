@@ -8,6 +8,11 @@ class Stack
   end
 
   def pop
+    if @stackSize > 0
+      temp = @storage[@stackSize - 1]
+      @storage.delete(@stackSize -= 1);
+      return temp
+    end
   end
 
   def size
