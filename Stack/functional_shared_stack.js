@@ -14,6 +14,10 @@ stackMethods.push = function(value){
 };
 
 stackMethods.pop = function(){
+  if (this.size) {
+    var temp = this.storage[this.size - 1];
+    return (delete this.storage[this.size--]) && temp;
+  }
 };
 
 stackMethods.size = function(){
