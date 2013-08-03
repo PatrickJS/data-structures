@@ -1,6 +1,6 @@
 class Stack
   def initialize
-    @storage = {}
+    @storage   = {}
     @stackSize = 0
   end
 
