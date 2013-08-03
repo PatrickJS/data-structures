@@ -6,3 +6,14 @@ var makeStack = function(){
 
   return methods;
 };
+
+stackMethods = {};
+
+stackMethods.push = function(value){
+};
+
+stackMethods.pop = function(){
+};
+
+stackMethods.size = function(){
+};
