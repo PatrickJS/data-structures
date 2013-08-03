@@ -10,6 +10,7 @@ var Queue = function(){
 var queueMethods = Queue.prototype;
 
 queueMethods.enqueue = function(value){
+  this.storage[this.queueSize++] = value;
 };
 
 queueMethods.dequeue = function(){
