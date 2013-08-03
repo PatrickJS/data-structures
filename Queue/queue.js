@@ -9,8 +9,7 @@ Queue.prototype.add = function(value) {
 };
 Queue.prototype.remove = function() {
   var temp = this.storage[this.front];
-  delete this.storage[this.front++];
-  return temp;
+  return (delete this.storage[this.front++]) && temp;
 };
 Queue.prototype.length = function(value) {
   return this.size - this.front;
