@@ -10,6 +10,7 @@ var makeStack = function(){
 stackMethods = {};
 
 stackMethods.push = function(value){
+  this.storage[this.size++] = value;
 };
 
 stackMethods.pop = function(){
