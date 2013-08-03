@@ -11,6 +11,7 @@ class Stack
   end
 
   def size
+    return @stackSize
   end
 
 end
