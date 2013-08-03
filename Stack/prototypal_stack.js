@@ -4,3 +4,14 @@ var Stack = function(){
   methods.stackSize = 0;
   return methods;
 };
+
+stackMethods = Stack.prototype;
+
+stackMethods.push = function(value){
+};
+
+stackMethods.pop = function(){
+};
+
+stackMethods.size = function(){
+};
