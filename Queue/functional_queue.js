@@ -9,6 +9,10 @@ var makeQueue = function(){
   };
 
   queue.dequeue = function(){
+    if (size - front) {
+      var temp = storage[front];
+      return (delete storage[front++]) && temp;
+    }
   };
 
   queue.size = function(){
