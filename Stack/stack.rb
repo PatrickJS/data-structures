@@ -1,5 +1,7 @@
 class Stack
   def initialize
+    @storage = {}
+    @stackSize = 0
   end
 
   def push(value)
