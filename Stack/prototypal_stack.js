@@ -12,6 +12,10 @@ stackMethods.push = function(value){
 };
 
 stackMethods.pop = function(){
+  if (this.stackSize) {
+    var temp = this.storage[this.stackSize - 1];
+    return (delete this.storage[this.stackSize--]) && temp;
+  }
 };
 
 stackMethods.size = function(){
