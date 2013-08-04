@@ -13,4 +13,6 @@ makeSet.prototype.contains = function(value){
 };
 
 makeSet.prototype.remove = function(value){
+  var temp = this._storage[value];
+  return (delete this._storage[value]) && temp;
 };
