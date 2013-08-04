@@ -10,6 +10,7 @@ makeSet.prototype.add = function(value){
 };
 
 makeSet.prototype.contains = function(value){
+  return this._storage[value] === value;
 };
 
 makeSet.prototype.remove = function(value){
