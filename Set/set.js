@@ -9,6 +9,9 @@ makeSet.prototype.generateKey = function(value) {
   if (type === 'function') {
     value = value.toString();
   }
+  else if (type === 'undefined') {
+    return 'undefined';
+  }
   return value;
 };
 
