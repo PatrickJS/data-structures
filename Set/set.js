@@ -12,6 +12,10 @@ makeSet.prototype.generateKey = function(value) {
   else if (type === 'undefined') {
     return 'undefined';
   }
+  //NaN
+  else if (type === 'number' && !value && value !== 0) {
+    return 'NaN';
+  }
   return value;
 };
 
