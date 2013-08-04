@@ -9,5 +9,5 @@ class Tree
       return true
     else if @children.length
       for child in @children
-        return child.contains(value)
+        return true if child.contains(value)
     return false
