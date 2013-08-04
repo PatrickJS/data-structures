@@ -13,7 +13,7 @@ Tree.prototype.contains = function(value) {
   } else if (this.children.length) {
     var child = this.children;
     for (var i = 0, l = child.length; i < l; i++) {
-      return child[i].contains(value);
+      return child[i].contains(value) && true;
     }
   }
   return false;
