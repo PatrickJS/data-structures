@@ -3,40 +3,47 @@ class LinkedList
 
   def initialize
     @head, @tail = nil, nil
+
   end
 
-  def add_to_head(value)
+  def unshift(value)
     node = Node.new(value)
-    unless @head
-      @tail, @head = node, node
-    else
+    if @head
       node.next = @head
       @head = node
-    end
-  end
-  def add_to_tail(value)
-    node = Node.new(value)
-    unless @tail
-      @head = node
-      @tail = node
     else
-      @tail.next = node
-      @tail = node
+      @tail, @head = node, node
     end
+
   end
 
-  def remove_head
+  def shift
     temp = @head
     @head = @head.next
     return temp
   end
-  def remove_tail(node=@head)
+
+  def push(value)
+    node = Node.new(value)
+    if @tail
+      @tail.next = node
+      @tail = node
+    else
+      @head, @tail = node, node
+    end
+
+  end
+
+  def pop(node=@head)
     if node.next == @tail
+      temp = @tail.next
       @tail = node
       @tail.next = nil
+      return temp
     elsif node.next
-      self.remove_head(node.next)
+      self.pop(node.next)
     end
+
   end
 
   def contains(value, node=@head)
@@ -46,15 +53,18 @@ class LinkedList
       return node.contains(value, node.next)
     end
     return false
+
   end
 
   private
   class Node
     attr_accessor :value, :next
+
     def initialize(value)
       @value = value
       @next = nil
     end
+
   end
 
 end
