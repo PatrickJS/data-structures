@@ -7,6 +7,7 @@ class Set
   end
 
   def contains(value)
+    return @storage[value] == value
   end
 
   def remove(value)
