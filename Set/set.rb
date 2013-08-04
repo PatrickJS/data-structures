@@ -1,5 +1,6 @@
 class Set
   def initilaize
+    @storage = {}
   end
 
   def add(value)
