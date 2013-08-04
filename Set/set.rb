@@ -4,6 +4,7 @@ class Set
   end
 
   def add(value)
+    @storage[value] = value
   end
 
   def contains(value)
