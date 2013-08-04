@@ -6,4 +6,6 @@ class Set
     value = @generateKey(value)
     @_storage[value] = value
   contains: (value)->
+    value = @generateKey(value)
+    @_storage[value] is value
   remove: (value)->
