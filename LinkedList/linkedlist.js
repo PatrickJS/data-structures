@@ -7,38 +7,41 @@ var MakeNode = function(value) {
   this.next = null;
 };
 
-LinkedList.prototype.addToHead = function(value) {
+LinkedList.prototype.unshift = function(value) {
   var node = new MakeNode(value);
-  if (!this.head) {
-    this.head = node;
-    this.tail = node;
-  } else {
+  if (this.head) {
     node.next = this.head;
     this.head = node;
-  }
-};
-LinkedList.prototype.removeHead = function() {
-  this.head = this.head.next;
-};
-LinkedList.prototype.addToTail = function(value) {
-  var node = new MakeNode(value);
-  if (!this.tail) {
+  } else {
     this.head = node;
     this.tail = node;
-  } else {
+  }
+};
+LinkedList.prototype.shift = function() {
+  var temp = this.head;
+  this.head = this.head.next;
+  return temp;
+};
+LinkedList.prototype.push = function(value) {
+  var node = new MakeNode(value);
+  if (this.tail) {
     this.tail.next = node;
+    this.tail = node;
+  } else {
+    this.head = node;
     this.tail = node;
   }
 };
-LinkedList.prototype.removeTail = function(node) {
+LinkedList.prototype.pop = function(node, temp) {
   node = node || this.head;
+  temp = this.tail;
   if (node.next === this.tail) {
     this.tail = node;
     this.tail.next = null;
   } else if (node.next) {
-    return this.removeTail(node.next);
+    return this.pop(node.next);
   }
-  return;
+  return temp;
 };
 
 LinkedList.prototype.contains = function(value, node) {
