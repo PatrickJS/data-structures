@@ -16,6 +16,9 @@ makeSet.prototype.generateKey = function(value) {
   else if (type === 'number' && !value && value !== 0) {
     return 'NaN';
   }
+  else {
+    value = JSON.stringify(value);
+  }
   return value;
 };
 
