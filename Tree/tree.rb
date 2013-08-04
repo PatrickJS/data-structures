@@ -14,7 +14,7 @@ class Tree
       return true
     elsif (@children.length > 0)
       @children.each do |child|
-        return child.contains(value)
+        return true if child.contains(value)
       end
     end
     return false
