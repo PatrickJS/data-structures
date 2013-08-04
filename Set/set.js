@@ -3,3 +3,13 @@ var makeSet = function(){
   set._storage = {};
   return set;
 };
+
+
+makeSet.prototype.add = function(value){
+};
+
+makeSet.prototype.contains = function(value){
+};
+
+makeSet.prototype.remove = function(value){
+};
