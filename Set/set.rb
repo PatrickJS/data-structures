@@ -10,6 +10,7 @@ class Set
   end
 
   def remove(value)
+    return @storage.delete(value)
   end
 
 end
