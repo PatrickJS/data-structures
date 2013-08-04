@@ -1,10 +1,8 @@
-var makeSet = function(){
-  var set = Object.create(makeSet.prototype);
-  set._storage = {};
-  return set;
+var Set = function(){
+  this._storage = {};
 };
 
-makeSet.prototype.generateKey = function(value) {
+Set.prototype.generateKey = function(value) {
   var type = typeof value;
   if (type === 'function') {
     value = value.toString();
@@ -22,17 +20,17 @@ makeSet.prototype.generateKey = function(value) {
   return value;
 };
 
-makeSet.prototype.add = function(value){
+Set.prototype.add = function(value){
   value = this.generateKey(value);
   this._storage[value] = value;
 };
 
-makeSet.prototype.contains = function(value){
+Set.prototype.contains = function(value){
   value = this.generateKey(value);
   return this._storage[value] === value;
 };
 
-makeSet.prototype.remove = function(value){
+Set.prototype.remove = function(value){
   value = this.generateKey(value);
   var temp = this._storage[value];
   return (delete this._storage[value]) && temp;
