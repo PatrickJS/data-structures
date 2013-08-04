@@ -6,6 +6,7 @@ var makeSet = function(){
 
 
 makeSet.prototype.add = function(value){
+  this._storage[value] = value;
 };
 
 makeSet.prototype.contains = function(value){
