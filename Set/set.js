@@ -4,6 +4,8 @@ var makeSet = function(){
   return set;
 };
 
+makeSet.prototype.generateKey = function(value) {
+};
 
 makeSet.prototype.add = function(value){
   value = this.generateKey(value);
