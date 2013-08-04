@@ -5,6 +5,11 @@ var makeSet = function(){
 };
 
 makeSet.prototype.generateKey = function(value) {
+  var type = typeof value;
+  if (type === 'function') {
+    value = value.toString();
+  }
+  return value;
 };
 
 makeSet.prototype.add = function(value){
