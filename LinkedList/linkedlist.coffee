@@ -7,7 +7,7 @@ class LinkedList
   constructor: ->
     @head = null
     @tail = null
-  addToHead: (value)->
+  unshift: (value)->
     node = new MakeNode(value)
     unless @head
       @tail = node
@@ -15,9 +15,9 @@ class LinkedList
     else
       node.next = @head
       @head = node
-  removeHead: ->
+  shift: ->
     @head = @head.next
-  addToTail: (value)->
+  push: (value)->
     node = new MakeNode(value)
     unless @tail
       @head = node
@@ -25,7 +25,7 @@ class LinkedList
     else
       @tail.next = node
       @tail = node
-  removeTail: (node=@head)->
+  pop: (node=@head)->
     if node.next == @tail
       @tail = node
       @tail.next = null
